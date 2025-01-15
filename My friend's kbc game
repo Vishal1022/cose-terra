@@ -1,0 +1,396 @@
+N=input('Enter your name')
+print('Welcome',N,'to K.B.C(kaun banega carorepati)')
+k='yes'
+while k.lower()=='yes':
+    import random
+    q=['''What is the capital of France?
+    A) Berlin
+    B) Madrid
+    C) Paris
+    D) Rome''',
+
+    '''Which planet is known as the Red Planet?
+    A) Earth
+    B) Venus
+    C) Mars
+    D) Jupiter''',
+
+    '''What is the square root of 64?
+    A) 6
+    B) 7
+    C) 8
+    D) 9''',
+
+    '''Which gas do plants primarily absorb during photosynthesis?
+    A) Oxygen
+    B) Carbon Dioxide
+    C) Nitrogen
+    D) Helium''',
+
+    '''Who wrote "Romeo and Juliet"?
+    A) Charles Dickens
+    B) William Shakespeare
+    C) Mark Twain
+    D) J.K. Rowling''',
+
+    '''What is H2O commonly known as?
+    A) Oxygen
+    B) Water
+    C) Hydrogen
+    D) Salt''',
+
+    '''Which animal is known as the King of the Jungle?
+    A) Elephant
+    B) Tiger
+    C) Lion
+    D) Cheetah''',
+
+    '''How many continents are there on Earth?
+    A) 5
+    B) 6
+    C) 7
+    D) 8''',
+
+    '''Which organ is responsible for pumping blood in the body?
+    A) Brain
+    B) Heart
+    C) Liver
+    D) Kidney''',
+
+    '''What is the freezing point of water?
+    A) 0°C
+    B) 32°C
+    C) 100°C
+    D) -1°C''',
+
+    '''Which is the smallest planet in our Solar System?
+    A) Mercury
+    B) Venus
+    C) Earth
+    D) Mars''',
+
+    '''What is the main ingredient in bread?
+    A) Rice
+    B) Flour
+    C) Sugar
+    D) Salt''',
+
+    '''Which is the largest ocean on Earth?
+    A) Atlantic
+    B) Indian
+    C) Arctic
+    D) Pacific''',
+
+    '''What is the boiling point of water?
+    A) 0°C
+    B) 50°C
+    C) 100°C
+    D) 150°C''',
+
+    '''Which color is formed by mixing blue and yellow?
+    A) Green
+    B) Purple
+    C) Orange
+    D) Brown''',
+
+    '''What does a thermometer measure?
+    A) Pressure
+    B) Temperature
+    C) Speed
+    D) Weight''',
+
+    '''Who painted the Mona Lisa?
+    A) Vincent van Gogh
+    B) Leonardo da Vinci
+    C) Pablo Picasso
+    D) Michelangelo''',
+
+    '''What is the largest mammal on Earth?
+    A) Elephant
+    B) Blue Whale
+    C) Giraffe
+    D) Rhino''',
+
+    '''How many sides does a triangle have?
+    A) 2
+    B) 3
+    C) 4
+    D) 5''',
+
+    '''Which metal is known as "Au" in the periodic table?
+    A) Silver
+    B) Aluminum
+    C) Gold
+    D) Copper''',
+
+    '''Which country is famous for pizza?
+    A) France
+    B) Italy
+    C) Japan
+    D) Mexico''',
+
+    '''Which is the fastest land animal?
+    A) Cheetah
+    B) Lion
+    C) Tiger
+    D) Horse''',
+
+    '''Which day is celebrated as World Environment Day?
+    A) June 5
+    B) July 5
+    C) August 5
+    D) September 5''',
+
+    '''Which is the hottest planet in the Solar System?
+    A) Mercury
+    B) Venus
+    C) Mars
+    D) Jupiter''',
+
+    '''What is the capital of Japan?
+    A) Beijing
+    B) Seoul
+    C) Tokyo
+    D) Bangkok''',
+
+    '''What is the chemical symbol for iron?
+    A) Fe
+    B) Ir
+    C) In
+    D) I''',
+
+    '''Which animal lays eggs?
+    A) Dog
+    B) Elephant
+    C) Duck
+    D) Whale''',
+
+    '''Which country is known as the Land of the Rising Sun?
+    A) China
+    B) Japan
+    C) India
+    D) Thailand''',
+
+    '''How many legs does a spider have?
+    A) 6
+    B) 8
+    C) 10
+    D) 12''',
+
+    '''Which part of the plant conducts photosynthesis?
+    A) Roots
+    B) Stem
+    C) Leaves
+    D) Flowers''',
+
+    '''Who discovered gravity?
+    A) Albert Einstein
+    B) Isaac Newton
+    C) Galileo Galilei
+    D) Marie Curie''',
+
+    '''Which language is spoken in Brazil?
+    A) Spanish
+    B) French
+    C) Portuguese
+    D) Italian''',
+
+    '''How many hours are there in a day?
+    A) 12
+    B) 24
+    C) 36
+    D) 48''',
+
+    '''Which is the hardest natural substance on Earth?
+    A) Gold
+    B) Diamond
+    C) Iron
+    D) Silver''',
+
+    '''Which vitamin is produced by the skin when exposed to sunlight?
+    A) Vitamin A
+    B) Vitamin B
+    C) Vitamin C
+    D) Vitamin D''',
+
+    '''Which instrument is used to measure weight?
+    A) Thermometer
+    B) Barometer
+    C) Weighing Scale
+    D) Speedometer''',
+
+    '''How many colors are there in a rainbow?
+    A) 5
+    B) 6
+    C) 7
+    D) 8''',
+
+    '''What is the national currency of the USA?
+    A) Euro
+    B) Dollar
+    C) Pound
+    D) Yen''',
+
+    '''Which continent is known as the Dark Continent?
+    A) Asia
+    B) Africa
+    C) Europe
+    D) Antarctica''',
+
+    '''What is the largest organ in the human body?
+    A) Brain
+    B) Heart
+    C) Skin
+    D) Liver''',
+
+    '''Which is the smallest bird in the world?
+    A) Sparrow
+    B) Hummingbird
+    C) Crow
+    D) Pigeon''',
+
+    '''What is the capital of Australia?
+    A) Sydney
+    B) Melbourne
+    C) Canberra
+    D) Brisbane''',
+
+    '''Which gas is known as laughing gas?
+    A) Nitrogen
+    B) Nitrous Oxide
+    C) Helium
+    D) Hydrogen''',
+
+    '''How many bones are there in an adult human body?
+    A) 206
+    B) 208
+    C) 210
+    D) 212''',
+
+    '''What is the tallest mountain in the world?
+    A) K2
+    B) Everest
+    C) Kangchenjunga
+    D) Lhotse''',
+
+    '''Which shape has 4 equal sides?
+    A) Rectangle
+    B) Triangle
+    C) Square
+    D) Circle''',
+
+    '''What is the primary source of energy for Earth?
+    A) Moon
+    B) Stars
+    C) Sun
+    D) Volcanoes''',
+
+    '''Which continent is the Sahara Desert located in?
+    A) Asia
+    B) Africa
+    C) Europe
+    D) Australia''',
+
+    '''What is the national flower of India?
+    A) Rose
+    B) Lotus
+    C) Jasmine
+    D) Sunflower''',
+
+    '''Which is the heaviest land animal?
+    A) Tiger
+    B) Elephant
+    C) Rhino
+    D) Hippopotamus''']
+    a=['C',
+    'C',
+    'C',
+    'B',
+    'B',
+    'B',
+    'C',
+    'C',
+    'B',
+    'A',
+    'A',
+    'B',
+    'D',
+    'C',
+    'A',
+    'B',
+    'B',
+    'B',
+    'B',
+    'C',
+    'B',
+    'A',
+    'A',
+    'B',
+    'C',
+    'A',
+    'C',
+    'B',
+    'B',
+    'C',
+    'B',
+    'C',
+    'B',
+    'B',
+    'D',
+    'C',
+    'C',
+    'B',
+    'B',
+    'C',
+    'B',
+    'C',
+    'B',
+    'A',
+    'B',
+    'C',
+    'C',
+    'B',
+    'B',
+    'B']
+    P=16
+    n=1
+    M=0
+    while P!=0:
+         print('Your',n,'Question is:-')
+         n+=1
+         Q=random.randint(0,49)
+         A=q[Q]
+         ans=a[Q]
+         print(A)
+         e=input('Do you want to quit(yes/no)')
+         if e.lower()=='yes':
+             print('You won Rs:-',M)
+             break
+         I=input('choose the correct option from (A,B,C,D)')
+         if I.upper()==ans:
+             print('correct')
+             M+=1000
+         
+         P=P-1
+         if I.upper()!=ans:
+             print('Incorrect ,correct option is',ans)
+             print('you won Rs.',M)
+             break
+    k=input('Do you want to play again:(yes/no)')
+    
+
+
+
+
+
+
+
+
+           
+
+
+
+
+
+
+
