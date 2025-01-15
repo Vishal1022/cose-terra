@@ -1,0 +1,105 @@
+import random
+
+
+player1 = 0
+player2 = 0
+
+player1_m = False
+player2_m= False
+w="_________________________________________"
+print(w)
+print("|100|099|098|097|096|095|094|093|092|091|")
+print("|090|089|088|087|086|085|084|083|082|081|")
+print("|080|079|078|077|076|075|074|073|072|071|")
+print("|070|069|068|067|066|065|064|063|062|061|")
+print("|060|059|058|057|056|055|054|053|052|051|")
+print("|050|049|048|047|046|045|044|043|042|041|")
+print("|040|039|038|037|036|035|034|033|032|031|")
+print("|030|029|028|027|026|025|024|023|022|021|")
+print("|020|019|018|017|016|015|014|013|012|011|")
+print("|010|009|008|007|006|005|004|003|002|001|")
+print('player 1= locked')
+print('player 2= locked')
+print("ladder1 = 10 to 25")
+print("ladder2 = 28 to 95")
+print("snake1 = 99 to 13")
+print("snake2 = 87 to 3")
+lh1= 10
+lh2 = 28
+lt1 = 25
+lt2 = 95
+sh1=99
+sh2 = 87
+st1 = 13
+st2 = 3
+
+while True:
+	n1 = input('enter r to roll dice for player 1 or q to quit' ).lower()
+
+	if n1 == 'r':
+		d1= random.randint(1, 6)
+		print(d1)
+	elif n1 == 'q':
+		print("player 1 surrenders, player 2 wims by default ")
+		break
+	n2= input('enter r to roll dice for player 2 or q to quit ').lower()
+	if n2 == 'r':
+		d2 = random.randint(1,6)
+		print(d2)
+	elif n2 == 'q':
+		print("player 2 surrendered player 2 wins by default ")
+		break
+	if player1_m == False and d1 == 1 or d1 == 6 :
+		player1_m = True
+	if player2_m == False and d2 == 1 or d2 == 6:
+		player2_m = True
+	
+	if player1_m == True:
+		player1 += d1
+		if player1>= 100:
+			player1 = 100
+		print("position of player 1 is", player1)
+		d1 = 0
+	if player2_m == True :
+		player2 += d2
+		if player2>= 100:
+			player2= 100
+		print("position of player 2 is", player2)
+		d2 = 0
+	
+	
+	if player1 == sh1 :
+		player1 = st1
+		print("positive of player 1", player1)
+	if player1 == sh2:
+		player1 = st2
+		print("position of player 1", player1)
+		
+	if player2 == sh1 :
+		player2 = st1
+		print("positive of player 2", player2)
+	if player2 == sh2:
+		player2 = st2
+		print("position of player 2", player2)
+	
+	if player1 == lh1:
+		player1 = lt1
+		print("position of player 1", player1)
+	if player1== lh2:
+		player1 = lt2
+		print("position of player 1", player1)
+			
+	if player2 == lh1:
+		player2 = lt1
+		print("position of player 2", player2)
+	if player2== lh2:
+		player2 = lt2
+		print("position of player 2", player2)
+		
+		
+	if player1 >= 100:
+		print("player 1 finished the game first ")
+		break 
+	elif player2 >= 100:
+		print("player 2 finished the game first ")
+		break
