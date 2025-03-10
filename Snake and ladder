@@ -4,6 +4,9 @@ import random
 player1 = 0
 player2 = 0
 
+z = 6
+y = 6
+
 player1_m = False
 player2_m= False
 w="_________________________________________"
@@ -24,27 +27,34 @@ print("ladder1 = 10 to 25")
 print("ladder2 = 28 to 95")
 print("snake1 = 99 to 13")
 print("snake2 = 87 to 3")
+print("snake3 = 95 to 29")
+print("snake4 = 79 to 34")
 lh1= 10
 lh2 = 28
 lt1 = 25
 lt2 = 95
-sh1=99
+sh1 = 99
 sh2 = 87
+sh3 = 95
+sh4 = 79
 st1 = 13
 st2 = 3
+st3 = 29
+st4 = 34
 
 while True:
-	n1 = input('enter r to roll dice for player 1 or q to quit' ).lower()
-
+	n1 = input('enter r to roll dice for player 1 or q to quit:' ).lower()
+	if player1 >= 80: z = 4
 	if n1 == 'r':
-		d1= random.randint(1, 6)
+		d1= random.randint(1, z)
 		print(d1)
 	elif n1 == 'q':
-		print("player 1 surrenders, player 2 wims by default ")
+		print("player 1 surrenders, player 2 wims by default")
 		break
-	n2= input('enter r to roll dice for player 2 or q to quit ').lower()
+	n2= input('enter r to roll dice for player 2 or q to quit:').lower()
+	if player2 >= 80 : y = 4
 	if n2 == 'r':
-		d2 = random.randint(1,6)
+		d2 = random.randint(1,y)
 		print(d2)
 	elif n2 == 'q':
 		print("player 2 surrendered player 2 wins by default ")
@@ -58,43 +68,76 @@ while True:
 		player1 += d1
 		if player1>= 100:
 			player1 = 100
-		print("position of player 1 is", player1)
 		d1 = 0
+	
+	print("position of player 1 is", player1)
+
+
 	if player2_m == True :
 		player2 += d2
 		if player2>= 100:
 			player2= 100
-		print("position of player 2 is", player2)
 		d2 = 0
-	
+	print("position of player 2 is", player2)
+
 	
 	if player1 == sh1 :
 		player1 = st1
+		print("player 1 got bitten by snake")
 		print("positive of player 1", player1)
 	if player1 == sh2:
 		player1 = st2
+		print("player 1 got bitten by snake")
 		print("position of player 1", player1)
-		
+
+	if player1 == sh3 :
+		player1 = st3
+		print("player 1 got bitten by snake")
+		print("positive of player 1", player1)
+	if player1 == sh4:
+		player1 = st4
+		print("player 1 got bitten by snake")
+		print("position of player 1", player1)
+
+
 	if player2 == sh1 :
 		player2 = st1
+		print("player 2 got bitten by snake")
 		print("positive of player 2", player2)
 	if player2 == sh2:
 		player2 = st2
+		print("player 2 got bitten by snake")
 		print("position of player 2", player2)
-	
+
+	if player2 == sh3:
+		player2 = st3
+		print("player 2 got bitten by snake")
+		print("position of player 2", player2)
+		
+	if player2 == sh4:
+		player2 = st4
+		print("player 2 got bitten by snake")
+		print("position of player 2", player2)
+
+
 	if player1 == lh1:
 		player1 = lt1
+		print("player 1 got to ladder")
 		print("position of player 1", player1)
 	if player1== lh2:
 		player1 = lt2
+		print("player 1 got to ladder")
 		print("position of player 1", player1)
 			
 	if player2 == lh1:
 		player2 = lt1
+		print("player 2 got to ladder")
 		print("position of player 2", player2)
 	if player2== lh2:
 		player2 = lt2
+		print("player 2 got to ladder")
 		print("position of player 2", player2)
+		
 		
 		
 	if player1 >= 100:
