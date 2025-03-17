@@ -1,26 +1,32 @@
 import random
 
 
-player1 = 0
-player2 = 0
+player1 = 00
+player2 = 00
+
 
 z = 6
 y = 6
+
+win = 0
+win2 = 0
 
 player1_m = False
 player2_m= False
 w="_________________________________________"
 print(w)
-print("|100|099|098|097|096|095|094|093|092|091|")
-print("|090|089|088|087|086|085|084|083|082|081|")
-print("|080|079|078|077|076|075|074|073|072|071|")
-print("|070|069|068|067|066|065|064|063|062|061|")
-print("|060|059|058|057|056|055|054|053|052|051|")
-print("|050|049|048|047|046|045|044|043|042|041|")
-print("|040|039|038|037|036|035|034|033|032|031|")
-print("|030|029|028|027|026|025|024|023|022|021|")
-print("|020|019|018|017|016|015|014|013|012|011|")
-print("|010|009|008|007|006|005|004|003|002|001|")
+boa = ("""|100|099|098|097|096|S3H|094|093|S1H|091|
+|090|089|088|S2H|086|085|084|083|082|081|
+|080|S5H|078|077|076|075|074|073|072|071|
+|070|069|068|067|066|0LT|064|063|062|061|
+|060|059|058|057|056|055|054|053|052|051|
+|050|049|048|047|046|045|044|043|042|041|
+|040|039|038|037|036|035|S5T|033|032|031|
+|030|S3T|0LH|027|026|0LT|024|023|022|021|
+|020|019|018|017|016|015|014|S1T|012|011|
+|0LH|009|008|007|006|005|004|S2T|002|001|""")
+
+print(boa)
 print('player 1= locked')
 print('player 2= locked')
 print("ladder1 = 10 to 25")
@@ -29,11 +35,12 @@ print("snake1 = 99 to 13")
 print("snake2 = 87 to 3")
 print("snake3 = 95 to 29")
 print("snake4 = 79 to 34")
+
 lh1= 10
 lh2 = 28
 lt1 = 25
-lt2 = 95
-sh1 = 99
+lt2 = 65
+sh1 = 92
 sh2 = 87
 sh3 = 95
 sh4 = 79
@@ -42,9 +49,15 @@ st2 = 3
 st3 = 29
 st4 = 34
 
+bor = boa
+
+
 while True:
+	
 	n1 = input('enter r to roll dice for player 1 or q to quit:' ).lower()
 	if player1 >= 80: z = 4
+	else : z = 6 
+	d1 = 0
 	if n1 == 'r':
 		d1= random.randint(1, z)
 		print(d1)
@@ -53,6 +66,8 @@ while True:
 		break
 	n2= input('enter r to roll dice for player 2 or q to quit:').lower()
 	if player2 >= 80 : y = 4
+	else : y = 6
+	d2 = 0
 	if n2 == 'r':
 		d2 = random.randint(1,y)
 		print(d2)
@@ -68,8 +83,10 @@ while True:
 		player1 += d1
 		if player1>= 100:
 			player1 = 100
+		if player1 > 100:
+			player1 -= d1
 		d1 = 0
-	
+		
 	print("position of player 1 is", player1)
 
 
@@ -77,6 +94,8 @@ while True:
 		player2 += d2
 		if player2>= 100:
 			player2= 100
+		if player2 > 100:
+			player2 -=d2
 		d2 = 0
 	print("position of player 2 is", player2)
 
@@ -140,9 +159,63 @@ while True:
 		
 		
 		
-	if player1 >= 100:
+	if player1 == 100:
+		win = 1
 		print("player 1 finished the game first ")
 		break 
-	elif player2 >= 100:
+	elif player2 == 100:
+		win2 = 1
 		print("player 2 finished the game first ")
 		break
+
+	p1 = str(player1)
+	p2 = str(player2)
+
+	if player1 == 1:
+		p1 = "001"
+	elif player1 == 2:
+		p1 = "002"
+	elif player1 == 3:
+		p1 = "003"
+	elif player1 == 4:
+		p1 = "004"
+	elif player1 == 5:
+		p1 = "005"
+	elif player1 == 6:
+		p1 = "006"
+	elif player1 == 7:
+		p1 = "007"
+	elif player1 == 8:
+		p1 = "008"
+	elif player1 == 9:
+		p1 = "009"
+
+	if player2 == 1:
+		p2 = "001"
+	elif player2 == 2:
+		p2 = "002"
+	elif player2 == 3:
+		p2 = "003"
+	elif player2 == 4:
+		p2 = "004"
+	elif player2 == 5:
+		p2 = "005"
+	elif player2 == 6:
+		p2 = "006"
+	elif player2 == 7:
+		p2 = "007"
+	elif player2 == 8:
+		p2 = "008"
+	elif player2 == 9:
+		p2 = "009"
+
+	if player1_m == True:
+		bor = boa.replace(p1, "P1")
+	if player2_m == True:
+		bor = bor.replace(p2,"P2")
+	if player1 == player2:
+		bor = bor.replace(p1, 'P12')
+		print("==")
+
+	print(bor)
+	bor = boa
